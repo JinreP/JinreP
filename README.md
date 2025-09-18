@@ -1,70 +1,71 @@
 <!-- Profile Header -->
 <h1 align="center">👋 Hey, I'm Subeedei</h1>
-<h3 align="center">
-  🚀 Aspiring Full-Stack Developer | Passionate About Learning | From Ulaanbaatar 🇲🇳
-</h3>
-
----
+<h3 align="center">🚀 Aspiring Full-Stack Developer • Passionate about learning • Ulaanbaatar 🇲🇳</h3>
 
 <p align="center">
-🌱 I started my coding journey in <b>June 2025</b> and I’m passionate about learning and building cool projects.<br>
-💻 I focus on <b>JavaScript, React, Next.js, HTML, CSS, and Tailwind</b> to turn ideas into real, working code.<br>
-🏋️ Outside of coding, you’ll find me in the gym, learning productivity tricks, or gaming 🎮.
+  Started my coding journey in <b>June 2025</b>. I build with <b>JavaScript, React, Next.js, HTML, CSS, Tailwind</b> — learning in public and shipping small projects.
 </p>
 
----
-
-<h2 align="center">🛠 Tech Stack</h2>
-
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=javascript" height="50" />
-  <img src="https://skillicons.dev/icons?i=react" height="50" />
-  <img src="https://skillicons.dev/icons?i=nextjs" height="50" />
-  <img src="https://skillicons.dev/icons?i=html" height="50" />
-  <img src="https://skillicons.dev/icons?i=css" height="50" />
-  <img src="https://skillicons.dev/icons?i=tailwind" height="50" />
+  <!-- Followers count (stable) -->
+  <img src="https://img.shields.io/github/followers/JinreP?label=Followers&style=for-the-badge" alt="GitHub followers">
+  <!-- Profile views (optional; remove if you don't want it) -->
+  <img src="https://komarev.com/ghpvc/?username=JinreP&style=for-the-badge" alt="Profile views counter">
 </div>
 
 ---
 
-<h2 align="center">📊 GitHub Stats</h2>
-
+## 🛠 Tech Stack
 <div align="center">
-
-  <!-- Streak Stats -->
-  <img src="https://streak-stats.demolab.com?user=JinreP&theme=tokyonight&hide_border=true&cache_seconds=3600&v=2" height="150" />
-
-  <!-- GitHub Stats Card -->
-  <img src="https://github-readme-stats.vercel.app/api?username=JinreP&show_icons=true&theme=tokyonight&hide_border=true&cache_seconds=3600&v=2" height="150" />
-
-  <!-- Top Languages -->
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JinreP&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=3600&v=2" height="150" />
-
+  <img src="https://skillicons.dev/icons?i=javascript,react,nextjs,html,css,tailwind" height="48" alt="stack icons"/>
 </div>
 
 ---
 
-<h2 align="center">🗺️ Activity Graph</h2>
+## 📌 Featured Projects
+- **[todo-lite](https://github.com/JinreP/todo-lite)** — Minimal to-do app (React + Tailwind). Filters, counters, and localStorage sync.  
+- **[random-bg](https://github.com/JinreP/random-bg)** — One-click random background generator (Next.js, hooks).  
+- **[ui-playground](https://github.com/JinreP/ui-playground)** — Small interactive components (modals, counters, password toggle, dark mode).
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=JinreP&theme=tokyo-night&hide_border=true&area=true&v=2" alt="activity graph"/>
-</div>
+> Tip: pin your top repos on your profile so they show up above the README.
 
 ---
 
-<h2 align="center">💬 Random Dev Quote</h2>
+## 🧭 Now / Status
+- 🔭 **Working on:** polishing React/Next.js UI patterns & small shipped projects  
+- 🌱 **Learning:** state management basics, clean components, accessibility  
+- 🎯 **Goal:** consistent daily commits; ship something every week  
+- 💬 **Ask me about:** hooks, lists & keys, filter/map/reduce basics
+
+---
+
+## 📈 Activity & Stats (robust)
+> **Recommended:** self-hosted metrics image (no third-party rate limits).  
+> After you set up the workflow below, this image will render automatically:
 
 <p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&v=2" />
+  <img src="https://raw.githubusercontent.com/JinreP/JinreP/main/github-metrics.svg" alt="GitHub metrics (auto-updated)">
 </p>
+
+<details>
+  <summary>Fallback widgets (optional)</summary>
+  <p align="center">
+    <!-- These sometimes cache; we added cache-busting params -->
+    <img src="https://streak-stats.demolab.com?user=JinreP&theme=tokyonight&hide_border=true&cache_seconds=3600&v=3" height="150" alt="streaks">
+    <img src="https://github-readme-stats.vercel.app/api?username=JinreP&show_icons=true&theme=tokyonight&hide_border=true&cache_seconds=3600&v=3" height="150" alt="stats">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JinreP&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=3600&v=3" height="150" alt="top languages">
+  </p>
+</details>
 
 ---
 
-<h2 align="center">🌐 Connect With Me</h2>
+## 🌐 Connect
+- 📫 **Email:** your@email.com  
+- 💼 **LinkedIn:** https://linkedin.com/in/your-handle  
+- 💬 **Discord:** yourDiscord#1234
 
-<div align="center">
-  <a href="https://linkedin.com/in/YOUR_LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-  <a href="https://twitter.com/YOUR_TWITTER"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
-  <a href="https://discordapp.com/users/YOUR_DISCORD_ID"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"/></a>
-</div>
+---
+
+### ✍️ Quick Bio
+19-year-old developer from Ulaanbaatar. Started in **June 2025**. I’m passionate about learning and building real things — from tiny UI widgets to mini-apps. Outside code: gym, productivity, and games.
 

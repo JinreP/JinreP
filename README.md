@@ -42,8 +42,13 @@
 ---
 
 <p align="center">
-  <img height="50%" width="auto" src="https://github-readme-stats.vercel.app/api?username=JinreP&show_icons=true&count_private=true&theme=darcula&hide_border=true&hide=issues,contribs&bg_color=00000000" alt="JinreP GitHub stats">
-  <img height="50%" width="auto" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JinreP&layout=compact&hide_border=true&theme=darcula&bg_color=00000000&langs_count=6" alt="Top languages">
+  <!-- GitHub Stats with caching -->
+  <img height="50%" width="auto" src="https://github-readme-stats.vercel.app/api?username=JinreP&show_icons=true&count_private=true&theme=darcula&hide_border=true&hide=issues,contribs&bg_color=00000000&cache_seconds=86400" alt="JinreP GitHub stats">
+  
+  <!-- Top Languages with caching -->
+  <img height="50%" width="auto" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JinreP&layout=compact&hide_border=true&theme=darcula&bg_color=00000000&langs_count=6&cache_seconds=86400" alt="Top languages">
+
+  <!-- GitHub Streak -->
   <img src="https://github-readme-streak-stats.herokuapp.com?user=JinreP&theme=darcula&hide_border=true&background=FFFFFF00" alt="GitHub streaks">
-  <br><br>
 </p>
+

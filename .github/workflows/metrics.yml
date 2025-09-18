@@ -1,0 +1,51 @@
+name: Update GitHub Metrics
+
+on:
+  # run once a day
+  schedule:
+    - cron: "0 3 * * *"   # 03:00 UTC daily
+  # let you run it manually from the Actions tab
+  workflow_dispatch:
+  # OPTIONAL: refresh metrics whenever you push to main
+  push:
+    branches: [ "main" ]
+
+# needed so the action can commit the generated SVG back to your repo
+permissions:
+  contents: write
+
+concurrency:
+  group: metrics
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # ************ IMPORTANT ************
+          # Add your token as a repo secret named METRICS_TOKEN
+          # (Settings ▸ Secrets and variables ▸ Actions ▸ New repository secret)
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # Your GitHub username
+          user: JinreP
+
+          # Output file that will be committed to the repo root
+          filename: github-metrics.svg
+          output_action: commit
+          committer_message: "chore: update metrics"
+
+          # Display config
+          template: classic
+          base: header, activity, repositories, metadata
+          config_timezone: Asia/Ulaanbaatar
+
+          # Useful plugins (safe defaults)
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          plugin_languages: yes
+          plugin_languages_sections: most-used
+          plugin_followup: yes
+          plugin_followup_sections: repositories, user

@@ -79,7 +79,10 @@ def render_svg(streak, start, end, username):
 def main():
     token = (os.environ.get("GH_STREAK_TOKEN") or "").strip()
     user = os.environ.get("STREAK_USER")
-    out = os.environ.get("STREAK_OUT", "streak.svg")
+    # Always write to an absolute path in the repo workdir
+    out_env = os.environ.get("STREAK_OUT", "streak.svg")
+    out = os.path.abspath(out_env)
+
     if not token or not user:
         print("Missing GH_STREAK_TOKEN or STREAK_USER env", file=sys.stderr)
         sys.exit(1)
@@ -87,22 +90,17 @@ def main():
     today = date.today()
     since = today - timedelta(days=365)  # must not exceed 1 year
 
-    try:
-        day_map = fetch_calendar(
-            token,
-            user,
-            since.isoformat() + "T00:00:00Z",
-            today.isoformat() + "T23:59:59Z"
-        )
-    except Exception as e:
-        # Print the error so the Action log shows the exact cause
-        print(f"ERROR fetching calendar: {e}", file=sys.stderr)
-        sys.exit(1)
+    day_map = fetch_calendar(
+        token, user,
+        since.isoformat() + "T00:00:00Z",
+        today.isoformat() + "T23:59:59Z"
+    )
 
     streak, start, end = current_streak(day_map)
     svg = render_svg(streak, start, end, user)
+    # >>> tell us exactly where we're writing
+    print(f"Writing SVG to: {out}")
     with open(out, "w", encoding="utf-8") as f:
         f.write(svg)
     print(f"Wrote {out} with streak={streak}, start={start}, end={end}")
-
 

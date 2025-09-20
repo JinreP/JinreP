@@ -2,9 +2,8 @@ name: Update Streak Badge
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # daily at 03:00 UTC
+    - cron: "0 3 * * *"   # run daily at 03:00 UTC
   workflow_dispatch:
-  # (optional) comment out the next 3 lines if you don't want auto-runs on push
   push:
     branches: [ "main" ]
 
@@ -29,12 +28,12 @@ jobs:
         env:
           GH_STREAK_TOKEN: ${{ secrets.GH_STREAK_TOKEN }}
           STREAK_USER: JinreP
-          STREAK_OUT: streak.svg         # ensure root output
+          STREAK_OUT: streak.svg   # 👈 make sure it outputs to repo root
         run: python .github/scripts/generate_streak_svg.py
 
       - name: Show repo contents
         run: |
-          pwd
+          echo "Listing repo root after generation:"
           ls -la
 
       - name: Verify artifact exists
@@ -43,11 +42,10 @@ jobs:
             echo "❌ streak.svg was not generated in $(pwd)"
             exit 1
           else
-            echo "✅ streak.svg present"
+            echo "✅ streak.svg present in $(pwd)"
           fi
 
       - name: Commit updated badge
-        if: ${{ hashFiles('streak.svg') != '' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

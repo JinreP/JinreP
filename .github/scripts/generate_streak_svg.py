@@ -87,9 +87,9 @@ def main():
     today = date.today()
     since = today - timedelta(days=365)  # must not exceed 1 year
 
-    # 👇 make sure this line is aligned with the others, not over-indented
     day_map = fetch_calendar(
-        token, user,
+        token,
+        user,
         since.isoformat() + "T00:00:00Z",
         today.isoformat() + "T23:59:59Z"
     )

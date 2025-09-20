@@ -2,8 +2,10 @@ name: Update Streak Badge
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # daily
-  workflow_dispatch:       # manual
+    - cron: "0 3 * * *"   # run daily at 03:00 UTC
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
 
 permissions:
   contents: write
@@ -22,40 +24,17 @@ jobs:
       - name: Install deps
         run: pip install requests
 
-      # ✅ Validate the secret quickly (no token value leaked)
-      - name: Validate GitHub token works
-        env:
-          GH_STREAK_TOKEN: ${{ secrets.GH_STREAK_TOKEN }}
-        run: |
-          if [ -z "$GH_STREAK_TOKEN" ]; then
-            echo "❌ GH_STREAK_TOKEN is empty or missing"; exit 1; fi
-          code=$(curl -s -o /dev/null -w "%{http_code}" https://api.github.com/graphql \
-            -H "Authorization: bearer $GH_STREAK_TOKEN" \
-            -H "Content-Type: application/json" \
-            --data '{"query":"{ viewer { login } }"}')
-          if [ "$code" != "200" ]; then
-            echo "❌ Token check failed. HTTP $code"; exit 1; fi
-          echo "✅ Token OK"
-
       - name: Generate streak.svg
         env:
           GH_STREAK_TOKEN: ${{ secrets.GH_STREAK_TOKEN }}
           STREAK_USER: JinreP
-          STREAK_OUT: streak.svg
+          STREAK_OUT: streak.svg   # ✅ ensure file is saved at repo root
         run: python .github/scripts/generate_streak_svg.py
 
-      - name: Verify artifact exists
-        run: |
-          if [ ! -f streak.svg ]; then
-            echo "❌ streak.svg was not generated"; exit 1; fi
-          echo "✅ streak.svg present"
-
       - name: Commit updated badge
-        if: ${{ hashFiles('streak.svg') != '' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add streak.svg
           git commit -m "chore: update streak badge" || echo "No changes"
           git push
-

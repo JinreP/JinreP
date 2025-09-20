@@ -84,7 +84,7 @@ def main():
         print("Missing GH_STREAK_TOKEN or STREAK_USER env", file=sys.stderr)
         sys.exit(1)
     today = date.today()
-    since = today - timedelta(days=400)
+since = today - timedelta(days=365)
     day_map = fetch_calendar(token, user, since.isoformat()+"T00:00:00Z", today.isoformat()+"T23:59:59Z")
     streak, start, end = current_streak(day_map)
     svg = render_svg(streak, start, end, user)

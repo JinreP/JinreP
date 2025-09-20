@@ -87,16 +87,22 @@ def main():
     today = date.today()
     since = today - timedelta(days=365)  # must not exceed 1 year
 
-    day_map = fetch_calendar(
-        token,
-        user,
-        since.isoformat() + "T00:00:00Z",
-        today.isoformat() + "T23:59:59Z"
-    )
+    try:
+        day_map = fetch_calendar(
+            token,
+            user,
+            since.isoformat() + "T00:00:00Z",
+            today.isoformat() + "T23:59:59Z"
+        )
+    except Exception as e:
+        # Print the error so the Action log shows the exact cause
+        print(f"ERROR fetching calendar: {e}", file=sys.stderr)
+        sys.exit(1)
 
     streak, start, end = current_streak(day_map)
     svg = render_svg(streak, start, end, user)
     with open(out, "w", encoding="utf-8") as f:
         f.write(svg)
     print(f"Wrote {out} with streak={streak}, start={start}, end={end}")
+
 

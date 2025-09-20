@@ -75,13 +75,12 @@ def render_svg(streak, start, end, username):
   <rect class="pill" x="24" y="86" width="140" height="24" rx="8"/>
   <text class="pilltxt" x="36" y="103">private included</text>
 </svg>"""
+
 def main():
     token = (os.environ.get("GH_STREAK_TOKEN") or "").strip()
     user = os.environ.get("STREAK_USER")
     out_env = os.environ.get("STREAK_OUT", "streak.svg")
-
-    # Always write to the repo root
-    out = os.path.join(os.getcwd(), out_env)
+    out = os.path.join(os.getcwd(), out_env)  # always save in repo root
 
     if not token or not user:
         print("Missing GH_STREAK_TOKEN or STREAK_USER env", file=sys.stderr)
@@ -90,18 +89,29 @@ def main():
     today = date.today()
     since = today - timedelta(days=365)  # GitHub GraphQL limit: ≤ 1 year
 
-    day_map = fetch_calendar(
-        token, user,
-        since.isoformat() + "T00:00:00Z",
-        today.isoformat() + "T23:59:59Z"
-    )
+    try:
+        day_map = fetch_calendar(
+            token, user,
+            since.isoformat() + "T00:00:00Z",
+            today.isoformat() + "T23:59:59Z"
+        )
+    except Exception as e:
+        print(f"ERROR fetching calendar: {e}", file=sys.stderr)
+        sys.exit(1)
 
     streak, start, end = current_streak(day_map)
     svg = render_svg(streak, start, end, user)
 
-    print(f"Writing SVG to: {out}")  # 👈 Debug line
+    print(f"Writing streak.svg to {out}")
     with open(out, "w", encoding="utf-8") as f:
         f.write(svg)
-    print(f"Wrote {out} with streak={streak}, start={start}, end={end}")
+
+    if not os.path.exists(out):
+        print("❌ streak.svg failed to save", file=sys.stderr)
+        sys.exit(1)
+    else:
+        print(f"✅ streak.svg successfully saved at {out}")
+        print(f"Streak: {streak}, from {start} to {end}")
+
 
 

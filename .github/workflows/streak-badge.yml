@@ -2,8 +2,8 @@ name: Update Streak Badge
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # daily at 03:00 UTC
-  workflow_dispatch:       # manual runs from Actions tab
+    - cron: "0 3 * * *"   # daily
+  workflow_dispatch:       # manual
 
 permissions:
   contents: write
@@ -22,14 +22,20 @@ jobs:
       - name: Install deps
         run: pip install requests
 
-      # (Optional) quick sanity info without leaking the token
-      - name: Debug env
+      # ✅ Validate the secret quickly (no token value leaked)
+      - name: Validate GitHub token works
         env:
           GH_STREAK_TOKEN: ${{ secrets.GH_STREAK_TOKEN }}
-          STREAK_USER: JinreP
         run: |
-          echo "Has token? $([ -n "$GH_STREAK_TOKEN" ] && echo YES || echo NO)"
-          echo "User: ${STREAK_USER}"
+          if [ -z "$GH_STREAK_TOKEN" ]; then
+            echo "❌ GH_STREAK_TOKEN is empty or missing"; exit 1; fi
+          code=$(curl -s -o /dev/null -w "%{http_code}" https://api.github.com/graphql \
+            -H "Authorization: bearer $GH_STREAK_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{"query":"{ viewer { login } }"}')
+          if [ "$code" != "200" ]; then
+            echo "❌ Token check failed. HTTP $code"; exit 1; fi
+          echo "✅ Token OK"
 
       - name: Generate streak.svg
         env:
@@ -41,11 +47,8 @@ jobs:
       - name: Verify artifact exists
         run: |
           if [ ! -f streak.svg ]; then
-            echo "❌ streak.svg was not generated"
-            exit 1
-          else
-            echo "✅ streak.svg present"
-          fi
+            echo "❌ streak.svg was not generated"; exit 1; fi
+          echo "✅ streak.svg present"
 
       - name: Commit updated badge
         if: ${{ hashFiles('streak.svg') != '' }}
@@ -55,3 +58,4 @@ jobs:
           git add streak.svg
           git commit -m "chore: update streak badge" || echo "No changes"
           git push
+

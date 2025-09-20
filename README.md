@@ -9,6 +9,8 @@
 </div>
 
 ---
+## 🔥 Contribution Streak
+<img src="./streak.svg" alt="All contributions streak" width="720" />
 
 ## 🔭 Now / Status
 
@@ -59,7 +61,6 @@
     src="https://github-readme-stats.vercel.app/api/top-langs/?username=JinreP&layout=compact&theme=darcula&hide_border=true&bg_color=00000000&langs_count=8&card_width=495&v=3" />
 </p>
 
-> If a number looks stale, it’s due to caching. Changing the trailing `&v=` value forces a refresh.
 
 ---
 
@@ -75,9 +76,7 @@
 
 <p>
   <a href="https://github.com/JinreP"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717.svg?logo=github&logoColor=fff" /></a>
-  <!-- Add your links below when ready -->
-  <!-- <a href="https://linkedin.com/in/YOUR_ID"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2.svg?logo=linkedin&logoColor=fff" /></a> -->
-  <!-- <a href="mailto:YOUR_EMAIL"><img alt="Email" src="https://img.shields.io/badge/Email-D14836.svg?logo=gmail&logoColor=fff" /></a> -->
+ 
 </p>
 
 ---

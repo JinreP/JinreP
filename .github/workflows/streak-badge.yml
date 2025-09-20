@@ -2,10 +2,8 @@ name: Update Streak Badge
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # run daily at 03:00 UTC
-  workflow_dispatch:
-  push:
-    branches: [ "main" ]
+    - cron: "0 3 * * *"   # daily at 03:00 UTC
+  workflow_dispatch:       # manual runs from Actions tab
 
 permissions:
   contents: write
@@ -24,6 +22,15 @@ jobs:
       - name: Install deps
         run: pip install requests
 
+      # (Optional) quick sanity info without leaking the token
+      - name: Debug env
+        env:
+          GH_STREAK_TOKEN: ${{ secrets.GH_STREAK_TOKEN }}
+          STREAK_USER: JinreP
+        run: |
+          echo "Has token? $([ -n "$GH_STREAK_TOKEN" ] && echo YES || echo NO)"
+          echo "User: ${STREAK_USER}"
+
       - name: Generate streak.svg
         env:
           GH_STREAK_TOKEN: ${{ secrets.GH_STREAK_TOKEN }}
@@ -31,11 +38,20 @@ jobs:
           STREAK_OUT: streak.svg
         run: python .github/scripts/generate_streak_svg.py
 
+      - name: Verify artifact exists
+        run: |
+          if [ ! -f streak.svg ]; then
+            echo "❌ streak.svg was not generated"
+            exit 1
+          else
+            echo "✅ streak.svg present"
+          fi
+
       - name: Commit updated badge
+        if: ${{ hashFiles('streak.svg') != '' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add streak.svg
           git commit -m "chore: update streak badge" || echo "No changes"
           git push
-

@@ -28,7 +28,7 @@ jobs:
         env:
           GH_STREAK_TOKEN: ${{ secrets.GH_STREAK_TOKEN }}
           STREAK_USER: JinreP
-          STREAK_OUT: streak.svg   # 👈 make sure it outputs to repo root
+          STREAK_OUT: streak.svg   # ✅ ensure output is in repo root
         run: python .github/scripts/generate_streak_svg.py
 
       - name: Show repo contents
@@ -45,7 +45,11 @@ jobs:
             echo "✅ streak.svg present in $(pwd)"
           fi
 
+      - name: Check streak.svg before commit
+        run: ls -la streak.svg
+
       - name: Commit updated badge
+        if: ${{ hashFiles('streak.svg') != '' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

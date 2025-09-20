@@ -77,21 +77,26 @@ def render_svg(streak, start, end, username):
 </svg>"""
 
 def main():
-    token = os.environ.get("GH_STREAK_TOKEN")
+    token = (os.environ.get("GH_STREAK_TOKEN") or "").strip()
     user = os.environ.get("STREAK_USER")
     out = os.environ.get("STREAK_OUT", "streak.svg")
     if not token or not user:
         print("Missing GH_STREAK_TOKEN or STREAK_USER env", file=sys.stderr)
         sys.exit(1)
+
     today = date.today()
-since = today - timedelta(days=365)
-    day_map = fetch_calendar(token, user, since.isoformat()+"T00:00:00Z", today.isoformat()+"T23:59:59Z")
+    since = today - timedelta(days=365)  # must not exceed 1 year
+
+    # 👇 make sure this line is aligned with the others, not over-indented
+    day_map = fetch_calendar(
+        token, user,
+        since.isoformat() + "T00:00:00Z",
+        today.isoformat() + "T23:59:59Z"
+    )
+
     streak, start, end = current_streak(day_map)
     svg = render_svg(streak, start, end, user)
     with open(out, "w", encoding="utf-8") as f:
         f.write(svg)
     print(f"Wrote {out} with streak={streak}, start={start}, end={end}")
-
-if __name__ == "__main__":
-    main()
 

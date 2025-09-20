@@ -10,7 +10,7 @@
 
 ---
 ## 🔥 Contribution Streak
-<img src="./streak.svg" alt="All contributions streak" width="720" />
+<img src="streak.svg" alt="All contributions streak" width="720" />
 
 ## 🔭 Now / Status
 

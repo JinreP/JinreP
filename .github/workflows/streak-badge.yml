@@ -38,3 +38,4 @@ jobs:
           git add streak.svg
           git commit -m "chore: update streak badge" || echo "No changes"
           git push
+

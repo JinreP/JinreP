@@ -102,6 +102,7 @@ def main():
     streak, start, end = current_streak(day_map)
     svg = render_svg(streak, start, end, user)
 
+    # 👇 Add these debug prints before and after writing
     print(f"Writing streak.svg to {out}")
     with open(out, "w", encoding="utf-8") as f:
         f.write(svg)

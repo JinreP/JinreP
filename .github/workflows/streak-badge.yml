@@ -2,10 +2,8 @@ name: Update Streak Badge
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # run daily at 03:00 UTC
+    - cron: "0 3 * * *"      # daily at 03:00 UTC
   workflow_dispatch:
-  push:
-    branches: [ "main" ]
 
 permissions:
   contents: write
@@ -14,7 +12,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true   # use GITHUB_TOKEN for push
+          fetch-depth: 0              # allow committing new files
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -28,31 +30,33 @@ jobs:
         env:
           GH_STREAK_TOKEN: ${{ secrets.GH_STREAK_TOKEN }}
           STREAK_USER: JinreP
-          STREAK_OUT: streak.svg   # ✅ ensure output is in repo root
-        run: python .github/scripts/generate_streak_svg.py
-
-      - name: Show repo contents
+          STREAK_OUT: streak.svg
         run: |
-          echo "Listing repo root after generation:"
-          ls -la
+          python .github/scripts/generate_streak_svg.py
+          echo "WORKSPACE=$GITHUB_WORKSPACE"
+          echo "List after generation:"
+          ls -la "$GITHUB_WORKSPACE"
 
-      - name: Verify artifact exists
+      # Upload the SVG so we can view it even if commit fails
+      - name: Upload artifact (streak.svg)
+        if: exists('streak.svg')
+        uses: actions/upload-artifact@v4
+        with:
+          name: streak-svg
+          path: streak.svg
+
+      - name: Commit & push streak.svg
         run: |
-          if [ ! -f streak.svg ]; then
-            echo "❌ streak.svg was not generated in $(pwd)"
+          set -e
+          echo "PWD=$(pwd)"
+          if [ ! -f "$GITHUB_WORKSPACE/streak.svg" ]; then
+            echo "❌ streak.svg not found at $GITHUB_WORKSPACE"
             exit 1
-          else
-            echo "✅ streak.svg present in $(pwd)"
           fi
-
-      - name: Check streak.svg before commit
-        run: ls -la streak.svg
-
-      - name: Commit updated badge
-        if: ${{ hashFiles('streak.svg') != '' }}
-        run: |
-          git config user.name "github-actions[bot]"
+          git status
+          git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add streak.svg
-          git commit -m "chore: update streak badge" || echo "No changes"
-          git push
+          git add "$GITHUB_WORKSPACE/streak.svg"
+          git commit -m "chore: add/update streak.svg" || echo "No changes to commit"
+          git push origin HEAD:main
+

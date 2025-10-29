@@ -1,8 +1,7 @@
 <h1 align="center">Hello 👋<br>I'm Subeedei (JinreP)</h1>
 
-<p align="center">
-  <img src="https://media.tenor.com/pl_gjRkbSLQAAAAM/gintama-gintoki.gif" alt="Cool anime vibe" width="500">
-</p>
+<img src="https://media.tenor.com/pl_gjRkbSLQAAAAM/gintama-gintoki.gif"
+     alt="Cool anime vibe" width="100%" height="500px" />
 
 ---
 
@@ -10,7 +9,7 @@
 🧠 Bootcamp Student @Pinecone Academy (3B)  
 🚀 Building projects like **Movie App**, **Food Delivery App**, and more  
 🎯 Goal: Become a top full-stack developer  
-
+💬 Always open to talk about *design patterns*, *UI*, or *anime*
 ---
 
 ### 🧰 Tech Stack
@@ -19,12 +18,23 @@
 ⚙️ **Tools:** Git • VS Code • Postman • Figma  
 🔥 **Other:** LeetCode • Discord Bot Dev • UI Design  
 
+<img
+  src="https://skillicons.dev/icons?i=nextjs,react,typescript,tailwind,nodejs,express,mongodb,git,vscode,postman,figma&perline=11&v=1"
+  alt="Tech stack icons"
+  width="100%"
+  style="max-width:100%; display:block;"
+/>
+
+
+
 ---
 
 ### 🎮 About Me
-🎬 Love anime, coding, and gaming (CS2 🎯)  
-🏋️‍♂️ Going gym to become strong & focused  
-💡 “Work hard, stay humble, commit daily.”
+🩸 Writing clean code is my therapy  
+🎮 Gaming, editing CS2 clips, learning, and lifting  
+🏋️‍♂️ On a journey to become *strong, skilled, and wealthy*  
+📅 “Every day counts — even small commits.”
+
 
 ---
 

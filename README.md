@@ -1,7 +1,7 @@
 <h1 align="center">Hello 👋<br>I'm Subeedei (JinreP)</h1>
 
 <p align="center">
-  <img src="https://media.tenor.com/4p2gwNLsxBEAAAAM/whizzy-imposterfox.gif" alt="Cool anime vibe" width="500">
+  <img src="https://i.imgur.com/1v9c5Xg.gif)" alt="Cool anime vibe" width="500">
 </p>
 
 ---

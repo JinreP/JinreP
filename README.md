@@ -7,13 +7,8 @@
 
 
 <p align="center">
-  <img 
-    src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&api=https://cdn.jsdelivr.net/gh/JinreP/JinreP/quotes.json" 
-    width="90%" 
-    height="140px"
-  />
+  <img src="https://cdn.jsdelivr.net/gh/JinreP/JinreP/quotes.svg" width="90%"/>
 </p>
-
 
 
 <p align="center">

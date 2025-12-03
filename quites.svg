@@ -1,0 +1,65 @@
+<svg width="900" height="200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes glitch {
+      0% { opacity: 1; }
+      25% { opacity: 0.8; transform: translate(1px, -1px); }
+      50% { opacity: 0.6; transform: translate(-1px, 1px); }
+      75% { opacity: 0.8; transform: translate(1px, 1px); }
+      100% { opacity: 1; transform: translate(0,0); }
+    }
+
+    @keyframes fade {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    text {
+      font-family: "Courier New", monospace;
+      fill: #ff0000;
+      font-size: 22px;
+      animation: glitch 0.3s infinite, fade 5s infinite;
+    }
+
+    .background {
+      fill: #000000;
+    }
+  </style>
+
+  <rect class="background" width="100%" height="100%" />
+
+  <text id="quote" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"></text>
+
+  <script type="application/ecmascript"><![CDATA[
+    const quotes = [
+      "I will embrace every pleasure and every pain this world has to offer. — Ainz Ooal Gown",
+      "Weakness disgusts me. Rise or be forgotten. — Demiurge",
+      "If you win, you live. If you lose, you die. If you don’t fight, you can’t win! — Eren Yeager",
+      "Devote your hearts! — Erwin Smith",
+      "This world is cruel, but it is also very beautiful. — Mikasa",
+      "Scars on the back are a swordsman’s shame. — Zoro",
+      "Inherited Will cannot be stopped. — Gol D. Roger",
+      "Go forward with your heart ablaze. — Rengoku",
+      "Sometimes you have to hurt someone to stop them from hurting themselves. — Kaneki",
+      "If you're always worried about crushing the ants beneath you... you won’t be able to walk. — Guts",
+      "I am Justice! — Light Yagami",
+      "People's lives end when they lose faith. — Naruto",
+      "Those who abandon their friends are worse than scum. — Kakashi",
+      "Wake up to reality. Nothing ever goes as planned. — Madara",
+      "Be water, my friend. — Bruce Lee",
+      "He who has a why can bear any how. — Nietzsche",
+      "The ones crazy enough to think they can change the world are the ones who do. — Steve Jobs"
+    ];
+
+    function updateQuote() {
+      const quoteElement = document.getElementById("quote");
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteElement.textContent = random;
+    }
+
+    setInterval(updateQuote, 5000);
+    updateQuote();
+  ]]></script>
+
+</svg>

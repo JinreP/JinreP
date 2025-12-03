@@ -12,6 +12,7 @@
 
 
 
+
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?size=22&color=A020F0&center=true&vCenter=true&width=550&lines=Building+My+Developer+Journey;Focused+on+JavaScript+%26+Next.js;Overlord+Mindset+⚡;Always+Improving" />
 </p>

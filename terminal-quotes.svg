@@ -1,64 +1,27 @@
 <svg width="900" height="200" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&display=swap');
-
-    .background {
-      fill: black;
-    }
-
-    .border {
-      stroke: #ff0033;
-      stroke-width: 3;
-      filter: drop-shadow(0 0 6px #ff0033);
-    }
-
-    .quote {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 18px;
-      fill: #ff0033;
-      filter: drop-shadow(0 0 4px #ff0033);
-    }
-
-    .cursor {
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
+    .box { fill: black; stroke: #ff0033; stroke-width: 3; }
+    .quote { font-family: 'Courier New', monospace; font-size: 20px; fill: #ff0033; }
   </style>
 
-  <!-- Background -->
-  <rect x="0" y="0" width="900" height="200" class="background"></rect>
+  <!-- Terminal box -->
+  <rect x="10" y="10" width="880" height="180" class="box"/>
 
-  <!-- Border -->
-  <rect x="8" y="8" width="884" height="184" fill="none" class="border"></rect>
+  <!-- Quotes (stacked, animated opacity) -->
+  <text x="30" y="110" class="quote">
+    “When you stare into the abyss, the abyss stares back.” – Berserk
+    <animate attributeName="opacity" values="1;0" dur="5s" repeatCount="indefinite"/>
+  </text>
 
-  <!-- Quote Text -->
-  <text id="quote" x="30" y="110" class="quote">Loading quote...</text>
-  <text x="870" y="170" class="quote cursor">█</text>
+  <text x="30" y="110" class="quote" opacity="0">
+    “Power… is everything.” – Ainz Ooal Gown
+    <animate attributeName="opacity" values="0;1;0" dur="10s" begin="5s" repeatCount="indefinite"/>
+  </text>
 
-  <script type="application/ecmascript"><![CDATA[
-    const quoteElement = document.getElementById("quote");
+  <text x="30" y="110" class="quote" opacity="0">
+    “If you win, you live. If you lose, you die.” – Eren Yeager
+    <animate attributeName="opacity" values="0;1;0" dur="10s" begin="10s" repeatCount="indefinite"/>
+  </text>
 
-    async function loadQuotes() {
-      try {
-        const response = await fetch("https://cdn.jsdelivr.net/gh/JinreP/JinreP/quotes.json");
-        const quotes = await response.json();
-
-        function rotate() {
-          const q = quotes[Math.floor(Math.random() * quotes.length)];
-          quoteElement.textContent = q.quote;
-        }
-
-        rotate();
-        setInterval(rotate, 4000);
-
-      } catch (e) {
-        quoteElement.textContent = "Error loading quotes.";
-      }
-    }
-
-    loadQuotes();
-  ]]></script>
 </svg>

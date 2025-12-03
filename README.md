@@ -7,9 +7,12 @@
 
 
 <p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=vertical&theme=tokyonight&quote=anime" />
+  <img 
+    src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&api=https://cdn.jsdelivr.net/gh/JinreP/JinreP/quotes.json" 
+    width="90%" 
+    height="140px"
+  />
 </p>
-
 
 
 

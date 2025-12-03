@@ -7,8 +7,9 @@
 
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/JinreP/JinreP/quotes.svg" width="90%"/>
+  <img src="https://raw.githack.com/JinreP/JinreP/main/quotes.svg" width="100%" />
 </p>
+
 
 
 <p align="center">

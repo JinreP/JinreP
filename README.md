@@ -6,8 +6,10 @@
 <p align="center"><b>Full Stack Developer • Next.js • Node.js • MongoDB</b></p>
 
 
+## 🧠 Random Quote
+
 <p align="center">
-  <img src="https://raw.githack.com/JinreP/JinreP/main/quotes.svg" width="100%" />
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" />
 </p>
 
 

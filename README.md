@@ -98,10 +98,13 @@
 </p>
 
 
-## 🐍 Contribution Snake
-<p align="center">
-  <img src="https://github.com/JinreP/JinreP/blob/output/github-contribution-grid-snake.svg" />
-</p>
+## 📈 GitHub Activity Graph
+![Subee's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=JinreP&theme=react-dark&area=true&hide_border=true)
+
+
+
+## 🌊 Developer Waves
+![Waves](https://capsule-render.vercel.app/api?type=waving&color=ff2b70&height=200&section=footer)
 
 ---
 

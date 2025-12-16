@@ -71,10 +71,10 @@
 
 | Project | Description | Tech |
 |--------|-------------|------|
-| 🎬 **Movie App** | Trailer system, categories, search | Next.js, TMDB API |
-| 🍔 **Food Delivery App** | Auth, cart, orders, admin panel | Next.js, Express, MongoDB |
-| 🤖 **AI Quiz Generator** | Turns text → auto quiz | React, Gemini API |
-| 🖼 **AI Object Detection** | Upload → detect items | Next.js, HuggingFace |
+| 🍔 **Food Delivery App** | Authentication, cart, orders, admin dashboard | Next.js, Express, MongoDB | [GitHub](https://github.com/JinreP/Food-Delivery) |
+| 🎬 **Movie App** | Trailer system, categories, search & filters | Next.js, TMDB API | [GitHub](https://github.com/JinreP/Movie-App) |
+| 🤖 **AI Quiz Generator** | Generates quizzes from text using AI | React, Gemini API | [GitHub](https://github.com/JinreP/Quiz-generator) |
+| 🖼 **AI Object Detection** | Upload image → detect objects using AI | Next.js, HuggingFace | [GitHub](https://github.com/JinreP/AI) |
 
 ---
 

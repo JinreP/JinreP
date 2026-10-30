@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" font-family="'JetBrains Mono','Fira Code','Cascadia Code','SF Mono',Consolas,'Courier New',monospace">
+  <defs>
+    <clipPath id="frame"><rect width="1200" height="420" rx="14"/></clipPath>
+    <clipPath id="screen"><rect x="0" y="0" width="1200" height="420"/></clipPath>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#ffffff" opacity="0.035"/>
+    </pattern>
+    <radialGradient id="vig" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.75"/>
+    </radialGradient>
+    <linearGradient id="fadeTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#05070a"/>
+      <stop offset="1" stop-color="#05070a" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      .g { fill:#22c55e; font-size:15px; }
+      .w { fill:#c9d1d9; font-size:15px; }
+      .d { fill:#4b5563; font-size:15px; }
+      .r { fill:#ef4444; font-size:15px; }
+      .c { fill:#7dd3fc; font-size:15px; }
+      .rain { fill:#22c55e; font-size:13px; opacity:0.22; }
+      .big { fill:#e5e7eb; font-size:52px; font-weight:700; letter-spacing:6px; }
+      .cursor { animation: blink 1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity:0 } }
+      .log { animation: scroll 16s linear infinite; }
+      @keyframes scroll { from { transform: translateY(0) } to { transform: translateY(-460px) } }
+      .rainA { animation: fall 9s linear infinite; }
+      .rainB { animation: fall 13s linear infinite; animation-delay:-5s; }
+      .rainC { animation: fall 11s linear infinite; animation-delay:-2s; }
+      @keyframes fall { from { transform: translateY(-420px) } to { transform: translateY(420px) } }
+      .gl1 { fill:#ef4444; mix-blend-mode:screen; animation: g1 5s infinite; }
+      .gl2 { fill:#22d3ee; mix-blend-mode:screen; animation: g2 5s infinite; }
+      @keyframes g1 { 0%,91%,100%{transform:translate(0,0);opacity:0} 92%{transform:translate(-5px,2px);opacity:.9} 94%{transform:translate(3px,-2px);opacity:.9} 96%{transform:translate(-2px,1px);opacity:.6} 98%{opacity:0} }
+      @keyframes g2 { 0%,91%,100%{transform:translate(0,0);opacity:0} 93%{transform:translate(5px,-2px);opacity:.9} 95%{transform:translate(-3px,2px);opacity:.9} 97%{transform:translate(2px,-1px);opacity:.6} 99%{opacity:0} }
+      .flicker { animation: fl 7s infinite; }
+      @keyframes fl { 0%,97%,100%{opacity:1} 98%{opacity:.6} 99%{opacity:.85} }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="420" fill="#05070a"/>
+
+    <!-- binary rain, three staggered columns groups -->
+    <g class="rain" clip-path="url(#screen)">
+      <g class="rainA">
+        <text x="40" y="20">0 1 1 0 1 0 0 1</text><text x="40" y="60">1 0 0 1 1 1 0 0</text><text x="40" y="100">0 0 1 0 1 1 0 1</text><text x="40" y="140">1 1 0 1 0 0 1 0</text><text x="40" y="180">0 1 0 0 1 1 1 0</text><text x="40" y="220">1 0 1 1 0 1 0 1</text><text x="40" y="260">0 1 1 0 0 1 0 0</text><text x="40" y="300">1 1 0 0 1 0 1 1</text><text x="40" y="340">0 0 1 1 0 1 1 0</text><text x="40" y="380">1 0 0 1 0 1 0 0</text><text x="40" y="420">0 1 1 0 1 0 0 1</text>
+        <text x="1030" y="30">1 0 1 0 0 1 1 0</text><text x="1030" y="70">0 1 1 1 0 0 1 0</text><text x="1030" y="110">1 0 0 1 1 0 1 1</text><text x="1030" y="150">0 1 0 1 0 1 0 0</text><text x="1030" y="190">1 1 1 0 0 1 1 0</text><text x="1030" y="230">0 0 1 0 1 0 1 1</text><text x="1030" y="270">1 0 1 1 0 0 0 1</text><text x="1030" y="310">0 1 0 0 1 1 1 0</text><text x="1030" y="350">1 1 0 1 1 0 0 1</text><text x="1030" y="390">0 0 1 1 0 1 0 0</text>
+      </g>
+      <g class="rainB">
+        <text x="140" y="10">1 1 0 0 1</text><text x="140" y="50">0 1 0 1 1</text><text x="140" y="90">1 0 1 0 0</text><text x="140" y="130">0 0 1 1 1</text><text x="140" y="170">1 1 0 1 0</text><text x="140" y="210">0 1 1 0 1</text><text x="140" y="250">1 0 0 1 0</text><text x="140" y="290">0 1 0 0 1</text><text x="140" y="330">1 1 1 0 0</text><text x="140" y="370">0 0 1 0 1</text><text x="140" y="410">1 0 1 1 0</text>
+        <text x="1120" y="40">0 1</text><text x="1120" y="80">1 0</text><text x="1120" y="120">1 1</text><text x="1120" y="160">0 0</text><text x="1120" y="200">1 0</text><text x="1120" y="240">0 1</text><text x="1120" y="280">1 1</text><text x="1120" y="320">0 1</text><text x="1120" y="360">1 0</text><text x="1120" y="400">0 0</text>
+      </g>
+      <g class="rainC">
+        <text x="960" y="0">0 1 1</text><text x="960" y="40">1 0 1</text><text x="960" y="80">1 1 0</text><text x="960" y="120">0 0 1</text><text x="960" y="160">1 0 0</text><text x="960" y="200">0 1 1</text><text x="960" y="240">1 1 1</text><text x="960" y="280">0 1 0</text><text x="960" y="320">1 0 1</text><text x="960" y="360">0 0 0</text><text x="960" y="400">1 1 0</text>
+        <text x="10" y="25">1</text><text x="10" y="65">0</text><text x="10" y="105">0</text><text x="10" y="145">1</text><text x="10" y="185">1</text><text x="10" y="225">0</text><text x="10" y="265">1</text><text x="10" y="305">0</text><text x="10" y="345">1</text><text x="10" y="385">1</text>
+      </g>
+    </g>
+
+    <!-- scrolling log window -->
+    <g transform="translate(250,0)" class="flicker">
+      <rect x="0" y="0" width="700" height="420" fill="#05070a"/>
+      <g clip-path="url(#screen)">
+        <g class="log" transform="translate(24,0)">
+          <text y="40" class="g">subeedei@ub:~$ <tspan class="w">./deploy --target vercel --prod</tspan></text>
+          <text y="64" class="d">[00:00.12] resolving dependencies ............ ok</text>
+          <text y="88" class="d">[00:00.48] compiling next.js (app router) ..... ok</text>
+          <text y="112" class="d">[00:01.02] prisma generate ..................... ok</text>
+          <text y="136" class="c">[00:01.30] 12 routes · 3 api handlers · 0 warnings</text>
+          <text y="160" class="g">[00:02.91] deployed → https://qr-kahoot.vercel.app</text>
+          <text y="200" class="g">subeedei@ub:~$ <tspan class="w">tail -f socket.log</tspan></text>
+          <text y="224" class="d">room 4F2K · player joined  (students: 27)</text>
+          <text y="248" class="d">room 4F2K · question 3/10 · 27/27 answered</text>
+          <text y="272" class="d">room 4F2K · leaderboard pushed · 14ms</text>
+          <text y="296" class="r">room 9ZQ1 · client disconnected · retrying ...</text>
+          <text y="320" class="g">room 9ZQ1 · reconnected · state restored</text>
+          <text y="360" class="g">subeedei@ub:~$ <tspan class="w">git log --oneline -3</tspan></text>
+          <text y="384" class="d">a81f2c3 feat: qr join screen</text>
+          <text y="408" class="d">0c9e7d1 fix: socket reconnect on lobby refresh</text>
+          <text y="432" class="d">f70e0e8 feat: redesign profile readme</text>
+          <text y="472" class="g">subeedei@ub:~$ <tspan class="w">npm run build -- ascend</tspan></text>
+          <text y="496" class="d">i18n: mn · ru · en ...................... ok</text>
+          <text y="520" class="d">admissions form · member profiles · news  ok</text>
+          <text y="544" class="c">bundle 184 kB · first load 92 kB</text>
+          <text y="584" class="g">subeedei@ub:~$ <tspan class="w">echo $MOTTO</tspan></text>
+          <text y="608" class="w">Always building. Always improving.</text>
+          <!-- duplicate of the first block for a seamless loop -->
+          <text y="648" class="g">subeedei@ub:~$ <tspan class="w">./deploy --target vercel --prod</tspan></text>
+          <text y="672" class="d">[00:00.12] resolving dependencies ............ ok</text>
+          <text y="696" class="d">[00:00.48] compiling next.js (app router) ..... ok</text>
+          <text y="720" class="d">[00:01.02] prisma generate ..................... ok</text>
+          <text y="744" class="c">[00:01.30] 12 routes · 3 api handlers · 0 warnings</text>
+          <text y="768" class="g">[00:02.91] deployed → https://qr-kahoot.vercel.app</text>
+          <text y="808" class="g">subeedei@ub:~$ <tspan class="w">tail -f socket.log</tspan></text>
+          <text y="832" class="d">room 4F2K · player joined  (students: 27)</text>
+          <text y="856" class="d">room 4F2K · question 3/10 · 27/27 answered</text>
+          <text y="880" class="d">room 4F2K · leaderboard pushed · 14ms</text>
+        </g>
+      </g>
+      <rect x="0" y="0" width="700" height="60" fill="url(#fadeTop)"/>
+    </g>
+
+    <!-- center glitch title -->
+    <g transform="translate(600,250)" text-anchor="middle">
+      <rect x="-290" y="-62" width="580" height="120" rx="6" fill="#05070a" opacity="0.94"/>
+      <text class="big gl1">HELLO, FRIEND</text>
+      <text class="big gl2">HELLO, FRIEND</text>
+      <text class="big">HELLO, FRIEND<tspan class="cursor" fill="#22c55e">_</tspan></text>
+      <text y="38" fill="#6b7280" font-size="14" letter-spacing="4">SUBEEDEI · FULL-STACK · ULAANBAATAR</text>
+    </g>
+
+    <rect width="1200" height="420" fill="url(#scan)"/>
+    <rect width="1200" height="420" fill="url(#vig)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="419" rx="14" fill="none" stroke="#1f2937"/>
+</svg>

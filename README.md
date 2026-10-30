@@ -113,26 +113,15 @@ $ git log --oneline --graph journey
 
 <br/>
 
-## GitHub Stats
+## Terminal
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=JinreP&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true&title_color=22c55e&icon_color=22c55e" alt="GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JinreP&layout=compact&theme=github_dark&hide_border=true&langs_count=8&title_color=22c55e" alt="Top languages" />
+<img src="./assets/terminal.svg" alt="terminal animation" width="100%" />
 
-<br/>
+<br/><br/>
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=JinreP&theme=github-dark-blue&hide_border=true&ring=22c55e&fire=22c55e&currStreakLabel=22c55e" alt="GitHub streak" />
-
-<br/><br/>
-
-<img src="https://github-profile-trophy.vercel.app/?username=JinreP&theme=darkhub&no-frame=true&no-bg=true&margin-w=8&column=7" alt="GitHub trophies" />
-
-<br/><br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=JinreP&theme=github-compact&hide_border=true&color=22c55e&line=22c55e&point=e6edf3&area=true&area_color=22c55e" alt="Contribution graph" width="100%" />
-
-<br/>
 
 </div>
 

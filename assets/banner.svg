@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" font-family="'JetBrains Mono','Fira Code','Cascadia Code','SF Mono',Consolas,'Courier New',monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05070a"/>
+      <stop offset="1" stop-color="#0b1015"/>
+    </linearGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#ffffff" opacity="0.025"/>
+    </pattern>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#16a34a" stroke-opacity="0.07"/>
+    </pattern>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#22c55e" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="frame"><rect width="1200" height="320" rx="14"/></clipPath>
+    <style>
+      .t { fill:#c9d1d9; font-size:17px; }
+      .p { fill:#22c55e; }
+      .k { fill:#7dd3fc; }
+      .d { fill:#6b7280; }
+      .name { fill:#e5e7eb; font-size:64px; font-weight:700; letter-spacing:4px; }
+      .gr { fill:#ef4444; mix-blend-mode:screen; }
+      .gb { fill:#22d3ee; mix-blend-mode:screen; }
+      .cursor { animation: blink 1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity:0; } }
+      .glitch1 { animation: g1 4s infinite; }
+      .glitch2 { animation: g2 4s infinite; }
+      @keyframes g1 { 0%,89%,100%{transform:translate(0,0);opacity:0} 90%{transform:translate(-4px,2px);opacity:.8} 92%{transform:translate(3px,-2px);opacity:.8} 94%{transform:translate(-2px,1px);opacity:.6} 96%{transform:translate(0,0);opacity:0} }
+      @keyframes g2 { 0%,89%,100%{transform:translate(0,0);opacity:0} 91%{transform:translate(4px,-2px);opacity:.8} 93%{transform:translate(-3px,2px);opacity:.8} 95%{transform:translate(2px,-1px);opacity:.6} 97%{transform:translate(0,0);opacity:0} }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="320" fill="url(#bg)"/>
+    <rect width="1200" height="320" fill="url(#grid)"/>
+    <ellipse cx="900" cy="160" rx="420" ry="220" fill="url(#glow)"/>
+    <rect width="1200" height="320" fill="url(#scan)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="319" rx="14" fill="none" stroke="#1f2937"/>
+
+  <!-- terminal window -->
+  <rect x="44" y="40" width="560" height="240" rx="10" fill="#0d1117" stroke="#30363d"/>
+  <rect x="44" y="40" width="560" height="32" rx="10" fill="#161b22"/>
+  <rect x="44" y="62" width="560" height="10" fill="#161b22"/>
+  <circle cx="66" cy="56" r="6" fill="#ff5f56"/>
+  <circle cx="86" cy="56" r="6" fill="#ffbd2e"/>
+  <circle cx="106" cy="56" r="6" fill="#27c93f"/>
+  <text x="324" y="61" text-anchor="middle" fill="#8b949e" font-size="13">subeedei@ub:~</text>
+
+  <g class="t">
+    <text x="64" y="104"><tspan class="p">$</tspan> <tspan class="k">whoami</tspan></text>
+    <text x="64" y="128">subeedei <tspan class="d">— software engineering student, MUST</tspan></text>
+    <text x="64" y="160"><tspan class="p">$</tspan> <tspan class="k">cat</tspan> stack.txt</text>
+    <text x="64" y="184">next.js · typescript · node · mongodb · postgres</text>
+    <text x="64" y="216"><tspan class="p">$</tspan> <tspan class="k">echo</tspan> $MOTTO</text>
+    <text x="64" y="240">Always building. Always improving.</text>
+    <text x="64" y="266"><tspan class="p">$</tspan> <tspan class="cursor">▋</tspan></text>
+  </g>
+
+  <!-- big name with glitch layers -->
+  <g transform="translate(640,0)">
+    <text x="0" y="150" class="name gr glitch1">SUBEEDEI</text>
+    <text x="0" y="150" class="name gb glitch2">SUBEEDEI</text>
+    <text x="0" y="150" class="name">SUBEEDEI</text>
+    <rect x="2" y="166" width="300" height="2" fill="#22c55e"/>
+    <text x="2" y="196" fill="#8b949e" font-size="16" letter-spacing="3">FULL-STACK DEVELOPER</text>
+    <text x="2" y="222" fill="#8b949e" font-size="16" letter-spacing="3">ULAANBAATAR, MONGOLIA</text>
+    <text x="2" y="262" fill="#22c55e" font-size="14">github.com/JinreP</text>
+  </g>
+</svg>

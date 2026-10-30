@@ -113,13 +113,6 @@ $ git log --oneline --graph journey
 
 <br/>
 
-## This week I spent my time on
-
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
-
-<br/>
-
 ## GitHub Stats
 
 <div align="center">
@@ -137,34 +130,9 @@ $ git log --oneline --graph journey
 
 <br/><br/>
 
-<img src="./profile-3d-contrib/profile-night-green.svg" alt="3D contribution graph" width="100%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=JinreP&theme=github-compact&hide_border=true&color=22c55e&line=22c55e&point=e6edf3&area=true&area_color=22c55e" alt="Contribution graph" width="100%" />
 
 <br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JinreP/JinreP/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JinreP/JinreP/output/github-snake.svg" />
-  <img alt="Contribution snake" src="https://raw.githubusercontent.com/JinreP/JinreP/output/github-snake-dark.svg" width="100%" />
-</picture>
-
-</div>
-
-<br/>
-
-## Recent Activity
-
-<!--START_SECTION:activity-->
-<!--END_SECTION:activity-->
-
-<br/>
-
-## Now Playing
-
-<div align="center">
-
-<a href="https://open.spotify.com/user/YOUR_SPOTIFY_USER_ID">
-  <img src="https://YOUR-SPOTIFY-APP.vercel.app/api/spotify" alt="Spotify now playing" width="380" />
-</a>
 
 </div>
 
